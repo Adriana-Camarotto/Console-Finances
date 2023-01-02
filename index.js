@@ -91,11 +91,11 @@ var finances = [
 
     var profitLosses = [];
 
-    var changesProfitLosses = [];
+    var difProfitLosses = [];
 
     var financeMonthly;
 
-    console.log ("Financial Period Analyses:\n")
+    console.log ("Financial Analysys:\n - - - - - - - - - - - - - - - - - - - ")
 
 
     // The total number of months included in the dataset.
@@ -111,52 +111,57 @@ var finances = [
         var profitlossesMonthly =  financeMonthly[1];
 
         profitLosses.push(profitlossesMonthly);
+
     }
+  
 
     // The reduce() method return the sum of all the elements in an array:
     var netProfits = profitLosses.reduce((accumulator, currentvalue) => {
         return accumulator + currentvalue;
     }, 0); 
 
-    console.log("Net total amount of Profit/Losses over the entire period: $" + + netProfits);
+    console.log("Net total amount of Profit/Losses: $" + netProfits);
 
     // The average of the **changes** in Profit/Losses over the entire period.
 
     // Stored the sum of changes - variable initialized
 
-    var sumOfChangesInProfitLosses = 0;
-    console.log(profitLosses)
+    var sumOfDifProfitLosses = 0;
+    
 
     // For loop - profitLosses 
-
-    for (var i = 0; i < profitLosses.length - 1; i++) {
+   
+    for (var i = 1; i < profitLosses.length; i++) {
         // the change calculated betweeng months
-        var changesInProfitLosses = profitLosses [i + 1] - profitLosses[i];
+        var tempDifProfitLosses = profitLosses [i] - profitLosses[i - 1];
 
         //sum of changes increased by the calculated change
-
-        sumOfChangesInProfitLosses += changesInProfitLosses;
+        sumOfDifProfitLosses += tempDifProfitLosses;
 
         //The push() method adds one or more elements to the end of an array and returns the new length of the array.
 
-        changesProfitLosses.push(changesInProfitLosses);
+        difProfitLosses.push(tempDifProfitLosses);
+    }
+        //Print the sum of changes in Profit and losses
+        //console.log (sumOfChangesInProfitLosses)
 
         //Average change 
-        var averageChangesProfitLosses = sumOfChangesInProfitLosses / profitLosses.length;
-
+        var avgChangesProfitLosses = sumOfDifProfitLosses / (difProfitLosses.length);
+       
         //Print the average of changes over the entire period. The toFixed() method formats a number using fixed-point notation.
-        console.log("Average Change: $" + averageChangesProfitLosses.toFixed(2)); 
+        console.log("Average Change: $" + avgChangesProfitLosses.toFixed(2)); 
 
-        for (var i = 0; i < changesProfitLosses.length; i++) {
+        var maxdiference = 0
+        
+        for (var i = 0; i < difProfitLosses.length; i++) {
             // The greatest increase in profits (date and amount) over the entire period.
-            if (changesProfitLosses[i]== Math.max(...changesProfitLosses)) {
-                console.log("greatest increase in profits: " + finances[i + 1][0] + " (" + Math.max(...changesProfitLosses) + ")");
+            if (difProfitLosses[i]== Math.max(...difProfitLosses)) {
+                console.log("greatest increase in profits: " + finances[i + 1][0] + " (" + Math.max(...difProfitLosses) + ")");
             // The greatest decrease in losses (date and amount) over the entire period.
-            } else if (changesProfitLosses[i]== Math.min(...changesProfitLosses)) {
-                console.log("greatest decrease in losses: " + finances[i + 1][0] + " (" + Math.min(...changesProfitLosses) + ")");
-            }
+            } else if (difProfitLosses[i]== Math.min(...difProfitLosses)) {
+                console.log("greatest decrease in losses: " + finances[i + 1][0] + " (" + Math.min(...difProfitLosses) + ")");
+            } 
         }
-    }
-
+    
 
 
