@@ -89,9 +89,9 @@ var finances = [
 
     //variavel declarations
 
-    var proftLosses = [];
+    var profitLosses = [];
 
-    var changesProftLosses = [];
+    var changesProfitLosses = [];
 
     var financeMonthly;
 
@@ -99,4 +99,9 @@ var finances = [
 
 
     // The total number of months included in the dataset.
+    // The length data property of an Array instance represents the number of elements in that array. 
+    // The value is an unsigned, 32-bit integer that is always numerically greater than the highest index in the array.
 
+    console.log("Total Months = " + finances.length + "\n");
+
+    
