@@ -104,4 +104,20 @@ var finances = [
 
     console.log("Total Months = " + finances.length + "\n");
 
+    // The net total amount of Profit/Losses over the entire period.
+
+    for (var i = 0; i < finances.length; i++) {
+        financeMonthly = finances [i];
+        var profitlossesMonthly =  financeMonthly[1];
+
+        profitLosses.push(profitlossesMonthly);
+    }
+
+    // The reduce() method return the sum of all the elements in an array:
+    var netProfits = profitLosses.reduce((accumulator, currentvalue) => {
+        return accumulator + currentvalue;
+    }, 0); 
+
+    console.log("Net total amount of Profit/Losses over the entire period: $" + + netProfits);
+
     
