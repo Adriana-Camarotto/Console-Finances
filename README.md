@@ -31,7 +31,7 @@ It is possible to use it to analize the finances of a company to take  decisions
 
 ## Screenshot
 
-![preview](./)
+![preview](./images/Screenshot%20Console-Finances.png)
 ## Link
 
 [Click here to acsess:](https://adriana-camarotto.github.io/Console-Finances/)
