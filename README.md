@@ -24,7 +24,7 @@ N/A
 
 ## Usage
 
-It is possible to use it to analize the finances of a company to take  decisions about the necessaries actions to mantein the compan`s finacnial health.
+It is possible to use it to analize the finances of a company to take  decisions about the necessaries actions to immprove the company`s financial health.
 
 
 ---
@@ -48,12 +48,10 @@ It is possible to use it to analize the finances of a company to take  decisions
 
 ## 📚What have I learned.
 
-- Responsive design.
-- How to use bootstrap 5.
-- How to style bootstrap using CSS.
-- Customize Bootstrap Components.
-- Code a one-page website based on a prompt.
-
+- The basics of JavaScript;
+- The push() method;
+- The return() method;
+- The reduce() method.
 
 
 ---
